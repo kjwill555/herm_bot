@@ -1,6 +1,6 @@
 # Setup
 ```bash
-$ git clone <insert_url>
+$ git clone https://github.com/kjwill555/herm_bot.git
 $ cd herm_bot
 ```
 
@@ -9,7 +9,7 @@ Then, create a virtual environment named "venv" in the `herm_bot` directory that
 Activate the virtual environment.
 
 
-```
+```bash
 # still inside herm_bot
 (venv) $ git submodule init
 (venv) $ git submodule update

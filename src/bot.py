@@ -12,18 +12,14 @@ from discord.ext import commands
 
 class HermBot(commands.Bot):
 
-  CHANNEL_NAME = "the joe biden experience"
-  GUILD_NAME = "UCI Triangle"
+  CHANNEL_NAME = "general"
+  GUILD_NAME = "Backyard Philosophers"
   HERMABLE_ROLE = "minecraft steve"
   HERMS_DIR = "./herms/"
   NON_COMMANDER_ERROR = "no"
 
   COMMANDERS = {
-    'HoboWithWifi',
-    'kjwill555',
-    'lightfire456',
-    'sandrew',
-    'Snail 2',
+    'mazonly',
   }
 
   

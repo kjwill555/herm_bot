@@ -24,6 +24,7 @@ class HermBot(commands.Bot):
     'lightfire456',
     'sandrew',
     'Snail 2',
+    'mazonly',
   }
 
   

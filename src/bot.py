@@ -1,5 +1,6 @@
 import argparse
 import asyncio
+import time
 import logging
 import os
 import random
@@ -12,13 +13,14 @@ from discord.ext import commands
 
 class HermBot(commands.Bot):
 
-  CHANNEL_NAME = "the joe biden experience"
-  GUILD_NAME = "UCI Triangle"
+  CHANNEL_NAME = "General"
+  GUILD_NAME = "Bot testing"
   HERMABLE_ROLE = "minecraft steve"
-  HERMS_DIR = "./herms/"
+  HERMS_DIR = "C:/Users/team_/Desktop/herm_bot/herms/"
   NON_COMMANDER_ERROR = "no"
 
   COMMANDERS = {
+    'Tim',
     'HoboWithWifi',
     'kjwill555',
     'lightfire456',
@@ -38,10 +40,11 @@ class HermBot(commands.Bot):
 
   def __init__(self, token):
     self.token = token
+
     self.vad_sink = VadSink(self.on_voice_activity)
     self.num_herms = len([name for name in os.listdir(self.HERMS_DIR) if os.path.isfile(os.path.join(self.HERMS_DIR, name))])
 
-    discord.opus.load_opus('libopus.so.0')
+    discord.opus.load_opus('C:/Users/team_/Desktop/herm_bot/src/libopus-0')
 
     super().__init__(command_prefix='~')
 
@@ -53,7 +56,7 @@ class HermBot(commands.Bot):
     self.add_command(commands.Command(self._command_list_hermables, name='list'))
     self.add_command(commands.Command(self._command_print_probability, name='p', aliases=['print_roll']))
     self.add_command(commands.Command(self._command_remove_hermable, name='r', aliases=['remove']))
-
+    
 
   async def _command_add_hermable(self, ctx, *args):
     try:
@@ -201,10 +204,14 @@ class HermBot(commands.Bot):
 
   async def on_ready(self):
     try:
-      logging.info(f'{self.user} successfully connected to Discord')
       
+      logging.info(f'{self.user} successfully connected to Discord')
+      print(self.guilds)
       self.guild = discord.utils.get(self.guilds, name=self.GUILD_NAME)
+      
       logging.info(f'guild name: {self.guild.name}')
+      self.voice_client.play(discord.FFmpegOpusAudio('1.mp3'))
+
     except Exception as e:
       logging.error(e, exc_info=True)
 
@@ -212,10 +219,11 @@ class HermBot(commands.Bot):
   def on_voice_activity(self):
     try:
       roll = random.randint(1, self.probability)
+      print(roll)
       logging.debug(f'rolled a {roll}')
       if roll == 1:
         herm_num = random.randint(1, self.num_herms)
-        self.voice_client.play(discord.FFmpegOpusAudio(f'herms/{herm_num}.ogg'))
+        self.voice_client.play(discord.FFmpegOpusAudio('1.mp3'))
     except Exception as e:
       logging.error(e, exc_info=True)
 
@@ -286,4 +294,6 @@ if __name__ == '__main__':
   _prepare_logging(argv.verbose, argv.console)
 
   bot = HermBot(os.environ.get('HERM_BOT_TOKEN'))
+  
   bot.start_running()
+  

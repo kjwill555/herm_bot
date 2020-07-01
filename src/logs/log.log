@@ -1,0 +1,191 @@
+06/30/2020 07:51:30 PM login()_441 INFO: logging in using static token
+06/30/2020 07:51:31 PM from_client()_241 INFO: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+06/30/2020 07:51:31 PM identify()_324 INFO: Shard ID None has sent the IDENTIFY payload.
+06/30/2020 07:51:31 PM received_message()_414 INFO: Shard ID None has connected to Gateway: ["gateway-prd-main-wg97",{"micros":48473,"calls":["discord-sessions-prd-1-63",{"micros":46299,"calls":["start_session",{"micros":44961,"calls":["api-prd-main-vpxt",{"micros":40841,"calls":["get_user",{"micros":4442},"add_authorized_ip",{"micros":3829},"get_guilds",{"micros":2447},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":413,"calls":[]}]}]}] (Session ID: c78baade4e1ccdccffaf8ff120af27ec).
+06/30/2020 07:51:33 PM on_ready()_207 INFO: herm_bot#7956 successfully connected to Discord
+06/30/2020 07:51:33 PM on_ready()_211 INFO: guild name: Bot testing
+06/30/2020 07:51:33 PM on_ready()_215 ERROR: 'NoneType' object has no attribute 'play'
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 212, in on_ready
+    self.voice_client.play(discord.FFmpegOpusAudio(f'herms/{herm_num}.ogg'))
+AttributeError: 'NoneType' object has no attribute 'play'
+06/30/2020 07:52:38 PM _command_add_hermable()_73 INFO: added new hermable "Tim"
+06/30/2020 07:52:44 PM connect()_218 INFO: Connecting to voice...
+06/30/2020 07:52:44 PM start_handshake()_150 INFO: Starting voice handshake...
+06/30/2020 07:52:44 PM start_handshake()_166 INFO: Voice handshake complete. Endpoint found us-west60.discord.media (IP: 162.159.128.235)
+06/30/2020 07:52:44 PM initial_connection()_782 INFO: selected the voice protocol for use (xsalsa20_poly1305_lite)
+06/30/2020 07:52:44 PM load_secret_key()_787 INFO: received secret key for voice connection
+06/30/2020 07:52:45 PM _join_voice_channel()_196 INFO: connected to voice channel "General"
+06/30/2020 07:52:47 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 15132.
+06/30/2020 07:52:47 PM cleanup()_165 INFO: ffmpeg process 15132 successfully terminated with return code of 1.
+06/30/2020 07:52:52 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 5848.
+06/30/2020 07:52:52 PM cleanup()_165 INFO: ffmpeg process 5848 successfully terminated with return code of 1.
+06/30/2020 07:52:56 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 13364.
+06/30/2020 07:52:56 PM cleanup()_165 INFO: ffmpeg process 13364 successfully terminated with return code of 1.
+06/30/2020 07:52:58 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 14456.
+06/30/2020 07:52:58 PM cleanup()_165 INFO: ffmpeg process 14456 successfully terminated with return code of 1.
+06/30/2020 07:53:05 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 15044.
+06/30/2020 07:53:05 PM cleanup()_165 INFO: ffmpeg process 15044 successfully terminated with return code of 1.
+06/30/2020 07:53:06 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 6024.
+06/30/2020 07:53:06 PM cleanup()_165 INFO: ffmpeg process 6024 successfully terminated with return code of 1.
+06/30/2020 07:53:06 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 12500.
+06/30/2020 07:53:06 PM cleanup()_165 INFO: ffmpeg process 12500 successfully terminated with return code of 1.
+06/30/2020 07:53:51 PM stop_running()_257 INFO: stopping...
+06/30/2020 07:53:51 PM terminate_handshake()_173 INFO: The voice handshake is being terminated for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 07:53:51 PM terminate_handshake()_175 INFO: The voice client has been removed for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 07:53:51 PM _leave_voice_channel()_201 INFO: left voice channel "General"
+06/30/2020 07:53:51 PM poll_voice_ws()_258 INFO: Disconnecting from voice normally, close code 1000.
+06/30/2020 07:53:51 PM stop_running()_263 INFO: logged out of Bot testing
+06/30/2020 07:53:51 PM poll_event()_508 INFO: Websocket closed with 1000 (), cannot reconnect.
+06/30/2020 07:53:56 PM login()_441 INFO: logging in using static token
+06/30/2020 07:53:57 PM from_client()_241 INFO: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+06/30/2020 07:53:57 PM identify()_324 INFO: Shard ID None has sent the IDENTIFY payload.
+06/30/2020 07:53:57 PM received_message()_414 INFO: Shard ID None has connected to Gateway: ["gateway-prd-main-xk9m",{"micros":63896,"calls":["discord-sessions-prd-1-26",{"micros":54133,"calls":["start_session",{"micros":52813,"calls":["api-prd-main-fzbs",{"micros":46898,"calls":["get_user",{"micros":7667},"add_authorized_ip",{"micros":1862},"get_guilds",{"micros":1524},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":210,"calls":[]}]}]}] (Session ID: 850fdd9ff5c98e3f9c5f746887a5ab73).
+06/30/2020 07:53:59 PM on_ready()_207 INFO: herm_bot#7956 successfully connected to Discord
+06/30/2020 07:53:59 PM on_ready()_211 INFO: guild name: Bot testing
+06/30/2020 07:53:59 PM on_ready()_215 ERROR: 'NoneType' object has no attribute 'play'
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 212, in on_ready
+    self.voice_client.play(discord.FFmpegOpusAudio(f'herms/{herm_num}.ogg'))
+AttributeError: 'NoneType' object has no attribute 'play'
+06/30/2020 07:54:00 PM _command_add_hermable()_73 INFO: added new hermable "Tim"
+06/30/2020 07:54:06 PM connect()_218 INFO: Connecting to voice...
+06/30/2020 07:54:06 PM start_handshake()_150 INFO: Starting voice handshake...
+06/30/2020 07:54:06 PM start_handshake()_166 INFO: Voice handshake complete. Endpoint found us-west60.discord.media (IP: 162.159.128.235)
+06/30/2020 07:54:06 PM initial_connection()_782 INFO: selected the voice protocol for use (xsalsa20_poly1305_lite)
+06/30/2020 07:54:07 PM load_secret_key()_787 INFO: received secret key for voice connection
+06/30/2020 07:54:07 PM _join_voice_channel()_196 INFO: connected to voice channel "General"
+06/30/2020 07:54:08 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 1508.
+06/30/2020 07:54:08 PM cleanup()_165 INFO: ffmpeg process 1508 successfully terminated with return code of 1.
+06/30/2020 07:54:31 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 1636.
+06/30/2020 07:54:31 PM cleanup()_165 INFO: ffmpeg process 1636 successfully terminated with return code of 1.
+06/30/2020 07:54:37 PM on_voice_activity()_226 ERROR: Already playing audio.
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 224, in on_voice_activity
+    self.voice_client.play(discord.FFmpegOpusAudio(f'herms/{herm_num}.mp3'))
+  File "C:\Users\team_\AppData\Local\Programs\Python\Python38\lib\site-packages\discord\voice_client.py", line 472, in play
+    raise ClientException('Already playing audio.')
+discord.errors.ClientException: Already playing audio.
+06/30/2020 07:54:37 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 2972.
+06/30/2020 07:54:37 PM cleanup()_161 INFO: ffmpeg process 2972 has not terminated. Waiting to terminate...
+06/30/2020 07:54:37 PM cleanup()_163 INFO: ffmpeg process 2972 should have terminated with a return code of 1.
+06/30/2020 07:54:37 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 7632.
+06/30/2020 07:54:37 PM cleanup()_165 INFO: ffmpeg process 7632 successfully terminated with return code of 1.
+06/30/2020 07:54:38 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 2908.
+06/30/2020 07:54:38 PM cleanup()_165 INFO: ffmpeg process 2908 successfully terminated with return code of 1.
+06/30/2020 07:59:54 PM stop_running()_257 INFO: stopping...
+06/30/2020 07:59:54 PM terminate_handshake()_173 INFO: The voice handshake is being terminated for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 07:59:54 PM terminate_handshake()_175 INFO: The voice client has been removed for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 07:59:54 PM _leave_voice_channel()_201 INFO: left voice channel "General"
+06/30/2020 07:59:54 PM poll_voice_ws()_258 INFO: Disconnecting from voice normally, close code 1000.
+06/30/2020 07:59:54 PM stop_running()_263 INFO: logged out of Bot testing
+06/30/2020 07:59:54 PM poll_event()_508 INFO: Websocket closed with 1000 (), cannot reconnect.
+06/30/2020 07:59:57 PM login()_441 INFO: logging in using static token
+06/30/2020 07:59:58 PM from_client()_241 INFO: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+06/30/2020 07:59:58 PM identify()_324 INFO: Shard ID None has sent the IDENTIFY payload.
+06/30/2020 07:59:58 PM received_message()_414 INFO: Shard ID None has connected to Gateway: ["gateway-prd-main-jq8l",{"micros":45402,"calls":["discord-sessions-prd-1-50",{"micros":39584,"calls":["start_session",{"micros":34930,"calls":["api-prd-main-v9jp",{"micros":31162,"calls":["get_user",{"micros":2221},"add_authorized_ip",{"micros":1617},"get_guilds",{"micros":3363},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":3467,"calls":[]}]}]}] (Session ID: 1280ac7d12124a2cfbe28e96308dcc5c).
+06/30/2020 08:00:00 PM on_ready()_208 INFO: herm_bot#7956 successfully connected to Discord
+06/30/2020 08:00:00 PM on_ready()_212 INFO: guild name: Bot testing
+06/30/2020 08:00:00 PM on_ready()_216 ERROR: 'NoneType' object has no attribute 'play'
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 213, in on_ready
+    self.voice_client.play(discord.FFmpegOpusAudio(f'herms/{herm_num}.mp3'))
+AttributeError: 'NoneType' object has no attribute 'play'
+06/30/2020 08:00:03 PM _command_add_hermable()_74 INFO: added new hermable "Tim"
+06/30/2020 08:00:06 PM connect()_218 INFO: Connecting to voice...
+06/30/2020 08:00:06 PM start_handshake()_150 INFO: Starting voice handshake...
+06/30/2020 08:00:07 PM start_handshake()_166 INFO: Voice handshake complete. Endpoint found us-west60.discord.media (IP: 162.159.128.235)
+06/30/2020 08:00:07 PM initial_connection()_782 INFO: selected the voice protocol for use (xsalsa20_poly1305_lite)
+06/30/2020 08:00:07 PM load_secret_key()_787 INFO: received secret key for voice connection
+06/30/2020 08:00:07 PM _join_voice_channel()_197 INFO: connected to voice channel "General"
+06/30/2020 08:00:08 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 4780.
+06/30/2020 08:00:08 PM cleanup()_165 INFO: ffmpeg process 4780 successfully terminated with return code of 1.
+06/30/2020 08:11:52 PM login()_441 INFO: logging in using static token
+06/30/2020 08:11:53 PM from_client()_241 INFO: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+06/30/2020 08:11:53 PM identify()_324 INFO: Shard ID None has sent the IDENTIFY payload.
+06/30/2020 08:11:53 PM received_message()_414 INFO: Shard ID None has connected to Gateway: ["gateway-prd-main-s8zh",{"micros":116703,"calls":["discord-sessions-prd-1-17",{"micros":113878,"calls":["start_session",{"micros":110487,"calls":["api-prd-main-v9jp",{"micros":103345,"calls":["get_user",{"micros":9881},"add_authorized_ip",{"micros":6736},"get_guilds",{"micros":7513},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":749,"calls":[]}]}]}] (Session ID: 49545dad97a81f6b62cc2b0aed82b246).
+06/30/2020 08:11:55 PM on_ready()_208 INFO: herm_bot#7956 successfully connected to Discord
+06/30/2020 08:11:55 PM on_ready()_212 INFO: guild name: Bot testing
+06/30/2020 08:11:55 PM on_ready()_216 ERROR: 'NoneType' object has no attribute 'play'
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 213, in on_ready
+    self.voice_client.play(discord.FFmpegOpusAudio(f'herms/{herm_num}.mp3'))
+AttributeError: 'NoneType' object has no attribute 'play'
+06/30/2020 08:12:03 PM _command_add_hermable()_74 INFO: added new hermable "Tim"
+06/30/2020 08:12:04 PM connect()_218 INFO: Connecting to voice...
+06/30/2020 08:12:04 PM start_handshake()_150 INFO: Starting voice handshake...
+06/30/2020 08:12:04 PM start_handshake()_166 INFO: Voice handshake complete. Endpoint found us-west510.discord.media (IP: 162.159.128.235)
+06/30/2020 08:12:04 PM initial_connection()_782 INFO: selected the voice protocol for use (xsalsa20_poly1305_lite)
+06/30/2020 08:12:04 PM load_secret_key()_787 INFO: received secret key for voice connection
+06/30/2020 08:12:05 PM _join_voice_channel()_197 INFO: connected to voice channel "General"
+06/30/2020 08:12:12 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 10232.
+06/30/2020 08:12:12 PM cleanup()_165 INFO: ffmpeg process 10232 successfully terminated with return code of 1.
+06/30/2020 08:12:14 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 3008.
+06/30/2020 08:12:14 PM cleanup()_165 INFO: ffmpeg process 3008 successfully terminated with return code of 1.
+06/30/2020 08:12:15 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 11104.
+06/30/2020 08:12:15 PM cleanup()_165 INFO: ffmpeg process 11104 successfully terminated with return code of 1.
+06/30/2020 08:12:16 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 3484.
+06/30/2020 08:12:16 PM cleanup()_165 INFO: ffmpeg process 3484 successfully terminated with return code of 1.
+06/30/2020 08:12:16 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 4320.
+06/30/2020 08:12:16 PM cleanup()_165 INFO: ffmpeg process 4320 successfully terminated with return code of 1.
+06/30/2020 08:12:17 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 10276.
+06/30/2020 08:12:17 PM cleanup()_165 INFO: ffmpeg process 10276 successfully terminated with return code of 1.
+06/30/2020 08:13:17 PM stop_running()_258 INFO: stopping...
+06/30/2020 08:13:17 PM terminate_handshake()_173 INFO: The voice handshake is being terminated for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 08:13:17 PM terminate_handshake()_175 INFO: The voice client has been removed for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 08:13:17 PM _leave_voice_channel()_202 INFO: left voice channel "General"
+06/30/2020 08:13:17 PM poll_voice_ws()_258 INFO: Disconnecting from voice normally, close code 1000.
+06/30/2020 08:13:17 PM stop_running()_264 INFO: logged out of Bot testing
+06/30/2020 08:13:17 PM poll_event()_508 INFO: Websocket closed with 1000 (), cannot reconnect.
+06/30/2020 08:31:53 PM login()_441 INFO: logging in using static token
+06/30/2020 08:31:54 PM from_client()_241 INFO: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+06/30/2020 08:31:54 PM identify()_324 INFO: Shard ID None has sent the IDENTIFY payload.
+06/30/2020 08:31:54 PM received_message()_414 INFO: Shard ID None has connected to Gateway: ["gateway-prd-main-r7k6",{"micros":66779,"calls":["discord-sessions-prd-1-46",{"micros":59159,"calls":["start_session",{"micros":56792,"calls":["api-prd-main-s660",{"micros":54201,"calls":["get_user",{"micros":3978},"add_authorized_ip",{"micros":3638},"get_guilds",{"micros":3604},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 6fcc9426d7a8c220efa8b255b559797e).
+06/30/2020 08:31:56 PM on_ready()_208 INFO: herm_bot#7956 successfully connected to Discord
+06/30/2020 08:31:56 PM on_ready()_212 INFO: guild name: Bot testing
+06/30/2020 08:31:56 PM on_ready()_216 ERROR: 'NoneType' object has no attribute 'play'
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 213, in on_ready
+    self.voice_client.play(discord.FFmpegOpusAudio('1.mp3'))
+AttributeError: 'NoneType' object has no attribute 'play'
+06/30/2020 08:31:57 PM connect()_218 INFO: Connecting to voice...
+06/30/2020 08:31:57 PM start_handshake()_150 INFO: Starting voice handshake...
+06/30/2020 08:31:57 PM start_handshake()_166 INFO: Voice handshake complete. Endpoint found us-west510.discord.media (IP: 162.159.138.234)
+06/30/2020 08:31:57 PM initial_connection()_782 INFO: selected the voice protocol for use (xsalsa20_poly1305_lite)
+06/30/2020 08:31:57 PM load_secret_key()_787 INFO: received secret key for voice connection
+06/30/2020 08:31:58 PM _join_voice_channel()_197 INFO: connected to voice channel "General"
+06/30/2020 08:32:00 PM _command_add_hermable()_74 INFO: added new hermable "Tim"
+06/30/2020 08:32:20 PM cleanup()_153 INFO: Preparing to terminate ffmpeg process 3008.
+06/30/2020 08:32:20 PM cleanup()_165 INFO: ffmpeg process 3008 successfully terminated with return code of 0.
+06/30/2020 08:34:33 PM stop_running()_259 INFO: stopping...
+06/30/2020 08:34:33 PM terminate_handshake()_173 INFO: The voice handshake is being terminated for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 08:34:33 PM terminate_handshake()_175 INFO: The voice client has been removed for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 08:34:33 PM _leave_voice_channel()_202 INFO: left voice channel "General"
+06/30/2020 08:34:33 PM poll_voice_ws()_258 INFO: Disconnecting from voice normally, close code 1000.
+06/30/2020 08:34:33 PM stop_running()_265 INFO: logged out of Bot testing
+06/30/2020 08:34:33 PM poll_event()_508 INFO: Websocket closed with 1000 (), cannot reconnect.
+06/30/2020 08:34:43 PM login()_441 INFO: logging in using static token
+06/30/2020 08:34:44 PM from_client()_241 INFO: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+06/30/2020 08:34:44 PM identify()_324 INFO: Shard ID None has sent the IDENTIFY payload.
+06/30/2020 08:34:44 PM received_message()_414 INFO: Shard ID None has connected to Gateway: ["gateway-prd-main-3kjp",{"micros":62020,"calls":["discord-sessions-prd-1-2",{"micros":59528,"calls":["start_session",{"micros":55155,"calls":["api-prd-main-xt5c",{"micros":51580,"calls":["get_user",{"micros":2404},"add_authorized_ip",{"micros":1972},"get_guilds",{"micros":2611},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 91e40ece90051609ab9696d37c4593f4).
+06/30/2020 08:34:46 PM on_ready()_208 INFO: herm_bot#7956 successfully connected to Discord
+06/30/2020 08:34:46 PM on_ready()_212 INFO: guild name: Bot testing
+06/30/2020 08:34:46 PM on_ready()_216 ERROR: 'NoneType' object has no attribute 'play'
+Traceback (most recent call last):
+  File "C:\Users\team_\Desktop\herm_bot\src\bot.py", line 213, in on_ready
+    self.voice_client.play(discord.FFmpegOpusAudio('1.mp3'))
+AttributeError: 'NoneType' object has no attribute 'play'
+06/30/2020 08:34:54 PM connect()_218 INFO: Connecting to voice...
+06/30/2020 08:34:54 PM start_handshake()_150 INFO: Starting voice handshake...
+06/30/2020 08:34:55 PM start_handshake()_166 INFO: Voice handshake complete. Endpoint found us-west510.discord.media (IP: 162.159.128.235)
+06/30/2020 08:34:55 PM initial_connection()_782 INFO: selected the voice protocol for use (xsalsa20_poly1305_lite)
+06/30/2020 08:34:55 PM load_secret_key()_787 INFO: received secret key for voice connection
+06/30/2020 08:34:55 PM _join_voice_channel()_197 INFO: connected to voice channel "General"
+06/30/2020 08:35:17 PM stop_running()_259 INFO: stopping...
+06/30/2020 08:35:17 PM terminate_handshake()_173 INFO: The voice handshake is being terminated for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 08:35:17 PM terminate_handshake()_175 INFO: The voice client has been removed for Channel ID 727625928418525186 (Guild ID 727625927911276646)
+06/30/2020 08:35:17 PM _leave_voice_channel()_202 INFO: left voice channel "General"
+06/30/2020 08:35:17 PM poll_voice_ws()_258 INFO: Disconnecting from voice normally, close code 1000.
+06/30/2020 08:35:17 PM stop_running()_265 INFO: logged out of Bot testing
+06/30/2020 08:35:17 PM poll_event()_508 INFO: Websocket closed with 1000 (), cannot reconnect.
+06/30/2020 08:35:27 PM run()_109 WARNING: Voice heartbeat blocked for more than 5 seconds

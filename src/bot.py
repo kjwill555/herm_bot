@@ -39,17 +39,28 @@ class HermBot(commands.Bot):
 
     discord.opus.load_opus('libopus.so.0')
 
-    super().__init__(command_prefix='~')
-
-    self.add_command(commands.Command(self._command_add_hermable, name='a', aliases=['add']))
-    self.add_command(commands.Command(self._command_change_probability, name='c', aliases=['change_roll']))
-    self.add_command(commands.Command(self._command_clear_hermables, name='clear'))
-    self.add_command(commands.Command(self._command_join, name='j', aliases=['join']))
-    self.add_command(commands.Command(self._command_leave, name='l', aliases=['leave']))
-    self.add_command(commands.Command(self._command_list_hermables, name='list'))
-    self.add_command(commands.Command(self._command_print_probability, name='p', aliases=['print_roll']))
-    self.add_command(commands.Command(self._command_remove_hermable, name='r', aliases=['remove']))
-
+    self.command_prefix='|'
+    super().__init__(command_prefix=self.command_prefix)
+    
+    self.add_commands()
+  
+  def add_commands(self):
+  #should turn this into some sort of class
+    command_list = [
+      (self._command_add_hermable,'a','add','adds a user to the hermables list'),
+      (self._command_change_probability,'c','change_roll','changes probability of a herm'),
+      (self._command_clear_hermables,'clear','','clears the hermables list'),
+      (self._command_join,'j','join','joins herm_bot'),
+      (self._command_leave,'l','leave','leaves herm_bot'),
+      (self._command_list_hermables,'list','','lists hermables'),
+      (self._command_print_probability,'p','print_roll','prints the current probability'),
+      (self._command_remove_hermable,'r','remove','removes a user from hermable list'),
+    ]
+    for item in command_list:
+      alias = [item[2]] if item[2] != '' else []
+      self.add_command(commands.Command(item[0], name=item[1], aliases=alias, brief=item[3],
+        description=item[3]))
+	
 
   async def _command_add_hermable(self, ctx, *args):
     try:
@@ -124,8 +135,8 @@ class HermBot(commands.Bot):
     try:
       if not self._is_commander(ctx.author.name):
         await ctx.send(self.NON_COMMANDER_ERROR)
-      elif ctx.author.voice is None:
-        await ctx.send("You are not in a voice channel.")
+      elif ctx.author.voice is None: ###
+        await ctx.send("You are not in a voice channel.") ###
       elif self.voice_client is not None and self.voice_client.channel.name == ctx.author.voice.channel.name:
         await ctx.send("I'm already in your voice channel.")
       else:
@@ -216,18 +227,18 @@ class HermBot(commands.Bot):
       logging.error(e, exc_info=True)
 
 
-  async def on_voice_state_update(self, member, before, after):
+  async def on_voice_state_update(self, member, before, after): ###
     try:
       if self.voice_client is not None and before.channel is not None and after.channel is None and before.channel.name == self.voice_client.channel.name and len(self.voice_client.channel.members) == 1:
         logging.info(f'no more people in {self.voice_client.channel.name}, leaving')
         await self._leave_voice_channel()
     except Exception as e:
-      logging.error(e, exc_info=True)
+      logging.error(e, exc_info=True) ###
 
 
   def _should_herm_user(self, voice_data):
     user = voice_data.user
-    return user.name in self.hermables or user.name in [role_member.name for role_member in discord.utils.get(self.voice_client.guild.roles, name=self.HERMABLE_ROLE).members]
+    return user.name in self.hermables
 
 
   def start_running(self):

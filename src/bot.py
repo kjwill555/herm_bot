@@ -12,8 +12,8 @@ from discord.ext import commands
 
 class HermBot(commands.Bot):
 
-  CHANNEL_NAME = "general"
-  GUILD_NAME = "Backyard Philosophers"
+  CHANNEL_NAME = "the joe biden experience"
+  GUILD_NAME = "UCI Triangle"
   HERMABLE_ROLE = "minecraft steve"
   HERMS_DIR = "./herms/"
   NON_COMMANDER_ERROR = "no"

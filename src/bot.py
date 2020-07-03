@@ -10,6 +10,9 @@ import discord
 from discord.ext import commands
 
 from TestCog import TestCog
+from HermsManagement import HermsManagement
+from ServerCommands import ServerCommands
+from RNG import RNG
 
 class HermBot(commands.Bot):
 
@@ -43,148 +46,10 @@ class HermBot(commands.Bot):
     self.command_prefix='|'
     super().__init__(command_prefix=self.command_prefix)
     
-    self.add_commands()
-    
     self.add_cog(TestCog(self))
-  
-  def add_commands(self):
-  #should turn this into some sort of class
-    command_list = [
-      (self._command_add_hermable,'a','add','adds a user to the hermables list'),
-      (self._command_change_probability,'c','change_roll','changes probability of a herm'),
-      (self._command_clear_hermables,'clear','','clears the hermables list'),
-      (self._command_join,'j','join','joins herm_bot'),
-      (self._command_leave,'l','leave','leaves herm_bot'),
-      (self._command_list_hermables,'list','','lists hermables'),
-      (self._command_print_probability,'p','print_roll','prints the current probability'),
-      (self._command_remove_hermable,'r','remove','removes a user from hermable list'),
-    ]
-    for item in command_list:
-      alias = [item[2]] if item[2] != '' else []
-      self.add_command(commands.Command(item[0], name=item[1], aliases=alias, brief=item[3],
-        description=item[3]))
-	
-
-  async def _command_add_hermable(self, ctx, *args):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-        return
-
-      new_hermable = ' '.join(args)
-      if not self._is_member(new_hermable, ctx):
-        await ctx.send(f'"{new_hermable}" does not exist.')
-      elif self._is_hermable(new_hermable):
-        await ctx.send(f'"{new_hermable}" is already my friend.')
-      else:
-        self.hermables.add(new_hermable)
-        logging.info(f'added new hermable "{new_hermable}"')
-        await ctx.send(f'Added new friend "{new_hermable}".')
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_remove_hermable(self, ctx, *args):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-        return
-
-      hermable = ' '.join(args)
-      if not self._is_hermable(hermable):
-        await ctx.send(f'"{hermable}" is not my friend.')
-      else:
-        self.hermables.remove(hermable)
-        logging.info(f'removed hermable "{hermable}"')
-        await ctx.send(f'Removed friend "{hermable}".')
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_change_probability(self, ctx, new_probability):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-        return
-
-      new_probability = int(new_probability)
-      if new_probability <= 0:
-        await ctx.send('New roll must be greater than zero.')
-      else:
-        self.probability = new_probability
-        logging.info(f'Updated probability to {new_probability}')
-        await ctx.send(f'Updated roll to d{new_probability}.')
-    except ValueError:
-      await ctx.send(f'{new_probability} is not an integer.')
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_clear_hermables(self, ctx):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-      elif len(self.hermables) == 0:
-        await ctx.send("I don't have any friends right now.")
-      else:
-        self.hermables.clear()
-        logging.info('cleared hermables')
-        await ctx.send("Friends cleared.")
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_join(self, ctx):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-      elif ctx.author.voice is None: ###
-        await ctx.send("You are not in a voice channel.") ###
-      elif self.voice_client is not None and self.voice_client.channel.name == ctx.author.voice.channel.name:
-        await ctx.send("I'm already in your voice channel.")
-      else:
-        if self.voice_client is not None:
-          await self._leave_voice_channel()
-
-        await self._join_voice_channel(ctx.author.voice.channel)
-        self.voice_client.listen(discord.reader.ConditionalFilter(self.vad_sink, self._should_herm_user))
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_leave(self, ctx):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-      elif self.voice_client is None:
-        await ctx.send("I'm not currently in a voice channel.")
-      else:
-        await self._leave_voice_channel()
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_list_hermables(self, ctx):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-      elif len(self.hermables) < 1:
-        await ctx.send("I don't have any friends right now.")
-      else:
-        friends_list = '• ' + '\n• '.join(sorted(self.hermables))
-        await ctx.send(f'My friends:\n{friends_list}')
-    except Exception as e:
-      logging.error(e, exc_info=True)
-
-
-  async def _command_print_probability(self, ctx):
-    try:
-      if not self._is_commander(ctx.author.name):
-        await ctx.send(self.NON_COMMANDER_ERROR)
-      else:
-        await ctx.channel.send(f'Roll is currently d{self.probability}')
-    except Exception as e:
-      logging.error(e, exc_info=True)
+    self.add_cog(HermsManagement(self))
+    self.add_cog(ServerCommands(self))
+    self.add_cog(RNG(self))
 
 
   def _is_commander(self, name):

@@ -9,11 +9,12 @@ from vad_sink import VadSink
 import discord
 from discord.ext import commands
 
+from TestCog import TestCog
 
 class HermBot(commands.Bot):
 
-  CHANNEL_NAME = "the joe biden experience"
-  GUILD_NAME = "UCI Triangle"
+  CHANNEL_NAME = "general" #"the joe biden experience"
+  GUILD_NAME = "Backyard Philosophers" #"UCI Triangle"
   HERMABLE_ROLE = "minecraft steve"
   HERMS_DIR = "./herms/"
   NON_COMMANDER_ERROR = "no"
@@ -43,6 +44,8 @@ class HermBot(commands.Bot):
     super().__init__(command_prefix=self.command_prefix)
     
     self.add_commands()
+    
+    self.add_cog(TestCog(self))
   
   def add_commands(self):
   #should turn this into some sort of class

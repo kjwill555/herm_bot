@@ -3,17 +3,17 @@ import logging
 import discord
   
 class ServerCommands(commands.Cog):
-  def __init__(self,bot):
+  def __init__(self, bot):
     self.bot = bot
     
   
-  @commands.command(name='j',brief='joins herm_bot',aliases=['join'])
+  @commands.command(name='j', brief='joins the voice channel you\'re currently in', aliases=['join'])
   async def _command_join(self, ctx):
     try:
       if not self.bot._is_commander(ctx.author.name):
         await ctx.send(self.bot.NON_COMMANDER_ERROR)
-      elif ctx.author.voice is None: ###
-        await ctx.send("You are not in a voice channel.") ###
+      elif ctx.author.voice is None: 
+        await ctx.send("You are not in a voice channel.") 
       elif self.bot.voice_client is not None and self.bot.voice_client.channel.name == ctx.author.voice.channel.name:
         await ctx.send("I'm already in your voice channel.")
       else:
@@ -26,7 +26,7 @@ class ServerCommands(commands.Cog):
       logging.error(e, exc_info=True)
       
       
-  @commands.command(name='l',brief='leaves herm_bot',aliases=['leave'])
+  @commands.command(name='l', brief='leaves the voice channel I\'m currently in', aliases=['leave'])
   async def _command_leave(self, ctx):
     try:
       if not self.bot._is_commander(ctx.author.name):

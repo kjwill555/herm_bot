@@ -3,11 +3,11 @@ import logging
 import discord
   
 class RNG(commands.Cog):
-  def __init__(self,bot):
+  def __init__(self, bot):
     self.bot = bot
     
   
-  @commands.command(name='c',brief='changes probability of a herm',aliases=['change_roll'])
+  @commands.command(name='c', brief='changes probability of a herm', aliases=['change_roll'])
   async def _command_change_probability(self, ctx, new_probability):
     try:
       if not self.bot._is_commander(ctx.author.name):
@@ -27,7 +27,7 @@ class RNG(commands.Cog):
       logging.error(e, exc_info=True)
 
 
-  @commands.command(name='p',brief='prints the current probability',aliases=['print_roll'])
+  @commands.command(name='p', brief='prints the current probability', aliases=['print_roll'])
   async def _command_print_probability(self, ctx):
     try:
       if not self.bot._is_commander(ctx.author.name):

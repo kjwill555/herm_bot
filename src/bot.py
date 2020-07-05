@@ -8,21 +8,24 @@ from vad_sink import VadSink
 
 import discord
 from discord.ext import commands
-
-from TestCog import TestCog
-from HermsManagement import HermsManagement
+from HermablesManagement import HermablesManagement
 from ServerCommands import ServerCommands
 from RNG import RNG
 
 class HermBot(commands.Bot):
 
-  CHANNEL_NAME = "general" #"the joe biden experience"
-  GUILD_NAME = "Backyard Philosophers" #"UCI Triangle"
+  CHANNEL_NAME = "the joe biden experience"
+  GUILD_NAME = "UCI Triangle"
   HERMABLE_ROLE = "minecraft steve"
   HERMS_DIR = "./herms/"
   NON_COMMANDER_ERROR = "no"
 
   COMMANDERS = {
+    'HoboWithWifi',
+    'kjwill555',
+    'lightfire456',
+    'sandrew',
+    'Snail 2',
     'mazonly',
   }
 
@@ -43,11 +46,9 @@ class HermBot(commands.Bot):
 
     discord.opus.load_opus('libopus.so.0')
 
-    self.command_prefix='|'
-    super().__init__(command_prefix=self.command_prefix)
+    super().__init__(command_prefix='~')
     
-    self.add_cog(TestCog(self))
-    self.add_cog(HermsManagement(self))
+    self.add_cog(HermablesManagement(self))
     self.add_cog(ServerCommands(self))
     self.add_cog(RNG(self))
 
@@ -95,13 +96,13 @@ class HermBot(commands.Bot):
       logging.error(e, exc_info=True)
 
 
-  async def on_voice_state_update(self, member, before, after): ###
+  async def on_voice_state_update(self, member, before, after):
     try:
       if self.voice_client is not None and before.channel is not None and after.channel is None and before.channel.name == self.voice_client.channel.name and len(self.voice_client.channel.members) == 1:
         logging.info(f'no more people in {self.voice_client.channel.name}, leaving')
         await self._leave_voice_channel()
     except Exception as e:
-      logging.error(e, exc_info=True) ###
+      logging.error(e, exc_info=True)
 
 
   def _should_herm_user(self, voice_data):

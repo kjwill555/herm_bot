@@ -1,13 +1,14 @@
-from discord.ext import commands
 import logging
+
 import discord
+from discord.ext import commands
   
-class HermsManagement(commands.Cog):
-  def __init__(self,bot):
+class HermablesManagement(commands.Cog):
+  def __init__(self, bot):
     self.bot = bot
     
   
-  @commands.command(name='a',brief='adds a user to the hermables list',aliases=['add'])
+  @commands.command(name='a', brief='adds a user to the friends list', aliases=['add'])
   async def _command_add_hermable(self, ctx, *args):
     try:
       if not self.bot._is_commander(ctx.author.name):
@@ -27,7 +28,7 @@ class HermsManagement(commands.Cog):
       logging.error(e, exc_info=True)
       
   
-  @commands.command(name='r',brief='removes a user from hermable list',aliases=['remove'])
+  @commands.command(name='r', brief='removes a user from friends list', aliases=['remove'])
   async def _command_remove_hermable(self, ctx, *args):
     try:
       if not self.bot._is_commander(ctx.author.name):
@@ -45,7 +46,7 @@ class HermsManagement(commands.Cog):
       logging.error(e, exc_info=True)
       
   
-  @commands.command(name='clear',brief='clears the hermables list')
+  @commands.command(name='clear', brief='clears the friends list')
   async def _command_clear_hermables(self, ctx):
     try:
       if not self.bot._is_commander(ctx.author.name):
@@ -60,7 +61,7 @@ class HermsManagement(commands.Cog):
       logging.error(e, exc_info=True)
       
   
-  @commands.command(name='list',brief='lists hermables')
+  @commands.command(name='list', brief='lists friends')
   async def _command_list_hermables(self, ctx):
     try:
       if not self.bot._is_commander(ctx.author.name):
